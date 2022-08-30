@@ -134,6 +134,7 @@
 
   export default {
     name: 'vue-treeselect--menu-portal',
+    inject: [ 'instance' ],
 
     created() {
       this.portalTarget = null
@@ -149,13 +150,16 @@
 
     methods: {
       setup() {
+        const { instance } = this
+
         const el = document.createElement('div')
         document.body.appendChild(el)
+
         this.portalTarget = createApp({
-          
           parent: this,
           ...PortalTarget,
-        });
+        }).provide('instance', instance)
+
         this.portalTarget.mount(el)
         // this.portalTarget = new Vue({
         //   el,
