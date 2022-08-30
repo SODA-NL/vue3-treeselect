@@ -34,7 +34,7 @@
     "easings-css": "2.0.3",
     "file-loader": "^6.0.0",
     "fuzzysearch": "1.0.3",
-    "html-webpack-plugin": "^4.3.0",
+    "html-webpack-plugin": "^5.5.0",
     "is-promise": "4.0.0",
     "less": "^3.13.0",
     "less-loader": "^7.1.0",
