@@ -10,11 +10,11 @@ const { DefinePlugin } = require('webpack');
 const tsNameof = require("ts-nameof");
 
 
-module.exports = (env = {}) => ([
+module.exports = (env = {}, argv) => ([
 {
 
   context: path.resolve(__dirname, 'demo'),
-  mode: env.production ? 'production' : 'development',
+  mode: argv.mode === 'production' ? 'production' : 'development',
   entry: {
     "app": './index.js',
   },
@@ -36,11 +36,11 @@ module.exports = (env = {}) => ([
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { hmr: !env.production }
+            options: { hmr: argv.mode !== 'production' }
           },
           {
             loader: "css-loader",
-            query: {
+            options: {
               importLoaders: 1
             }
           },
@@ -48,7 +48,7 @@ module.exports = (env = {}) => ([
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: !env.production,
+              sourceMap: argv.mode !== 'production',
             }
           }
         ],
@@ -59,11 +59,11 @@ module.exports = (env = {}) => ([
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { hmr: !env.production }
+            options: { hmr: argv.mode !== 'production' }
           },
           {
             loader: "css-loader",
-            query: {
+            options: {
               importLoaders: 1
             }
           },
@@ -71,7 +71,7 @@ module.exports = (env = {}) => ([
           {
             loader: 'less-loader',
             options: {
-              sourceMap: !env.production,
+              sourceMap: argv.mode !== 'production',
             }
           }
         ],
@@ -82,7 +82,7 @@ module.exports = (env = {}) => ([
         loader: 'vue-loader',
         options: {
           getCustomTransformers: () => ({ before: [tsNameof] }),
-          productionMode: !!env.production,
+          productionMode:  argv.mode === 'production',
         }
       },
       {
@@ -143,6 +143,6 @@ module.exports = (env = {}) => ([
     })
   ],
 
-  devtool: env.production ? false : 'source-map',
- 
+  devtool: argv.mode === 'production' ? false : 'source-map',
+
 }]);
