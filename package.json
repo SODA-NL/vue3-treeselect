@@ -4,7 +4,7 @@
   "description": "Tree select hierarchical component for vue 3 (next)",
   "author": "megafetis",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve ./demo/index.js",
     "build": "vue-cli-service build --target lib --name vue3-treeselect ./src/index.js && webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
