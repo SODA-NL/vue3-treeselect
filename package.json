@@ -5,7 +5,7 @@
   "author": "megafetis",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue3-treeselect ./src/index.js && webpack --env.production",
+    "build": "vue-cli-service build --target lib --name vue3-treeselect ./src/index.js && webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "dist/vue3-treeselect.common.js",
@@ -40,6 +40,8 @@
     "less-loader": "^7.1.0",
     "material-colors": "1.2.6",
     "mini-css-extract-plugin": "^0.9.0",
+    "postcss": "^8.4.16",
+    "postcss-loader": "^7.0.1",
     "resolve-url-loader": "^3.1.2",
     "sass": "^1.26.10",
     "sass-loader": "^9.0.3",
@@ -86,6 +88,5 @@
     "*.css",
     "*.less"
   ],
-  "style": "dist/vue3-treeselect.css",
-  "dependencies": {}
+  "style": "dist/vue3-treeselect.css"
 }
