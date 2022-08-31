@@ -6477,7 +6477,7 @@ var instanceId = 0;
 
       this.$emit('search-change', this.trigger.searchQuery, this.getInstanceId());
     },
-    value: function value() {
+    modelValue: function modelValue() {
       var nodeIdsFromValue = this.extractCheckedNodeIdsFromValue();
       var hasChanged = quickDiff(nodeIdsFromValue, this.internalValue);
       if (hasChanged) this.fixSelectedNodeIds(nodeIdsFromValue);
@@ -6969,8 +6969,10 @@ var instanceId = 0;
       return this.$refs.control.$el;
     },
     getMenu: function getMenu() {
-      var ref = this.appendToBody ? this.$refs.portal && this.$refs.portal.portalTarget : this;
-      var $menu = ref && ref.$refs.menu.$refs.menu;
+      var _ref$$refs;
+
+      var ref = this.appendToBody && this.$refs.portal ? this.$refs.portal.portalTarget : this;
+      var $menu = ref === null || ref === void 0 ? void 0 : (_ref$$refs = ref.$refs) === null || _ref$$refs === void 0 ? void 0 : _ref$$refs.menu.$refs.menu;
       return $menu && $menu.nodeName !== '#comment' ? $menu : null;
     },
     setCurrentHighlightedOption: function setCurrentHighlightedOption(node) {
@@ -9292,6 +9294,7 @@ var PortalTarget = {
 var placeholder;
 /* harmony default export */ var MenuPortalvue_type_script_lang_js = ({
   name: 'vue-treeselect--menu-portal',
+  inject: ['instance'],
   created: function created() {
     this.portalTarget = null;
   },
@@ -9303,12 +9306,12 @@ var placeholder;
   },
   methods: {
     setup: function setup() {
+      var instance = this.instance;
       var el = document.createElement('div');
       document.body.appendChild(el);
       this.portalTarget = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createApp)(_objectSpread2({
         parent: this
-      }, PortalTarget));
-      this.portalTarget.mount(el); // this.portalTarget = new Vue({
+      }, PortalTarget)).provide('instance', instance).mount(el); // this.portalTarget = new Vue({
       //   el,
       //   parent: this,
       //   ...PortalTarget,
