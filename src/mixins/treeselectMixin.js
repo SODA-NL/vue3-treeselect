@@ -1371,8 +1371,8 @@ export default {
     },
 
     getMenu() {
-      const ref = this.appendToBody ? this.$refs.portal && this.$refs.portal.portalTarget : this
-      const $menu = ref && ref.$refs.menu.$refs.menu
+      const ref = this.appendToBody && this.$refs.portal ? this.$refs.portal.portalTarget : this
+      const $menu = ref?.$refs?.menu.$refs.menu
       return $menu && $menu.nodeName !== '#comment' ? $menu : null
     },
 
@@ -1594,12 +1594,12 @@ export default {
             //   isLoaded,
             // })
             normalized.childrenStates = {...createAsyncOptionsStates(),isLoaded}
-            
+
             // this.$ set(normalized, 'isExpanded', typeof isDefaultExpanded === 'boolean'
             //   ? isDefaultExpanded
             //   : level < this.defaultExpandLevel)
             normalized.isExpanded = typeof isDefaultExpanded === 'boolean' ? isDefaultExpanded : level < this.defaultExpandLevel;
-            
+
             // this.$ set(normalized, 'hasMatchedDescendants', false)
             // this.$ set(normalized, 'hasDisabledDescendants', false)
             // this.$ set(normalized, 'isExpandedOnSearch', false)

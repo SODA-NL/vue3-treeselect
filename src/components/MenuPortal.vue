@@ -1,5 +1,5 @@
 <script>
-  import {createApp} from 'vue'
+  import { createApp } from 'vue'
   import { watchSize, setupResizeAndScrollEventListeners, find } from '../utils'
   import Menu from './Menu'
 
@@ -158,9 +158,11 @@
         this.portalTarget = createApp({
           parent: this,
           ...PortalTarget,
-        }).provide('instance', instance)
+        })
+        .provide('instance', instance)
+        .mount(el)
 
-        this.portalTarget.mount(el)
+
         // this.portalTarget = new Vue({
         //   el,
         //   parent: this,
