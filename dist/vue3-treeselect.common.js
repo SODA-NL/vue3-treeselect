@@ -9318,7 +9318,9 @@ var placeholder;
       // })
     },
     teardown: function teardown() {
-      document.body.removeChild(this.portalTarget.$el);
+      var _this$portalTarget$$e, _this$portalTarget$$e2;
+
+      (_this$portalTarget$$e = this.portalTarget.$el) === null || _this$portalTarget$$e === void 0 ? void 0 : (_this$portalTarget$$e2 = _this$portalTarget$$e.parentNode) === null || _this$portalTarget$$e2 === void 0 ? void 0 : _this$portalTarget$$e2.removeChild(this.portalTarget.$el);
       this.portalTarget.$el.innerHTML = '';
       this.portalTarget.$destroy();
       this.portalTarget = null;
