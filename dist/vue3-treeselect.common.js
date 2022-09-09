@@ -9318,11 +9318,11 @@ var placeholder;
       // })
     },
     teardown: function teardown() {
-      var _this$portalTarget$$e, _this$portalTarget$$e2, _this$portalTarget;
+      var _this$portalTarget$$e, _this$portalTarget$$e2;
 
       (_this$portalTarget$$e = this.portalTarget.$el) === null || _this$portalTarget$$e === void 0 ? void 0 : (_this$portalTarget$$e2 = _this$portalTarget$$e.parentNode) === null || _this$portalTarget$$e2 === void 0 ? void 0 : _this$portalTarget$$e2.removeChild(this.portalTarget.$el);
-      this.portalTarget.$el.innerHTML = '';
-      (_this$portalTarget = this.portalTarget) === null || _this$portalTarget === void 0 ? void 0 : _this$portalTarget.$destroy();
+      this.portalTarget.$el.innerHTML = ''; //this.portalTarget.$destroy() // $destroy is removed in Vue 3
+
       this.portalTarget = null;
     }
   },
