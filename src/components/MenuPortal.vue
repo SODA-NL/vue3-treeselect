@@ -171,7 +171,7 @@
       },
 
       teardown() {
-        document.body.removeChild(this.portalTarget.$el)
+        this.portalTarget.$el?.parentNode?.removeChild(this.portalTarget.$el)
         this.portalTarget.$el.innerHTML = ''
 
         this.portalTarget.$destroy()
