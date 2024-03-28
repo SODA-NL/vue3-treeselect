@@ -44,12 +44,12 @@
       // }
 
       return renderValueContainer(
-        <transition-group class="vue-treeselect__multi-value" tag="div" name="vue-treeselect__multi-value-item--transition" appear={true} >
+        <TransitionGroup class="vue-treeselect__multi-value" tag="div" name="vue-treeselect__multi-value-item--transition" appear={true} >
           {this.renderMultiValueItems()}
           {this.renderExceedLimitTip()}
           <Placeholder key="placeholder" />
           <Input ref="input" key="input" />
-        </transition-group>,
+        </TransitionGroup>,
       )
     },
   }
