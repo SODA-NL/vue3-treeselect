@@ -731,7 +731,7 @@ export default {
      * @type {node[]}
      */
     selectedNodes() {
-      return node && this.forest.selectedNodeIds.map(this.getNode);
+      return this.forest.selectedNodeIds.map(this.getNode);
     },
     /**
      * Id list of selected nodes with `sortValueBy` prop applied.
