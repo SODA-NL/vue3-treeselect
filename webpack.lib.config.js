@@ -91,7 +91,7 @@ module.exports = [
       libraryTarget: "umd",
       filename: "vue3-treeselect.umd.min.js"
     }
-  },
+  }/*,
   {
     ...baseConfig,
     output: {
@@ -107,5 +107,5 @@ module.exports = [
     experiments: {
       outputModule: true, // Enables module output in Webpack
     }
-  }
+  }*/
 ];
