@@ -91,5 +91,21 @@ module.exports = [
       libraryTarget: "umd",
       filename: "vue3-treeselect.umd.min.js"
     }
+  },
+  {
+    ...baseConfig,
+    output: {
+      path: path.join(__dirname, "dist/"),
+      library: {
+        type: "module", // Use ES module output
+      },
+      filename: "vue3-treeselect.esm.js",
+      environment: {
+        module: true, // Ensures compatibility with ES module features
+      },
+    },
+    experiments: {
+      outputModule: true, // Enables module output in Webpack
+    }
   }
 ];
