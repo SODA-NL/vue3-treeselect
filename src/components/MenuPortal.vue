@@ -166,14 +166,14 @@ export default {
 
   methods: {
     setup() {
+      const { instance } = this;
+
       const el = document.createElement("div");
       document.body.appendChild(el);
       this.portalTarget = createApp({
         parent: this,
         ...PortalTarget
-      });
-      this.portalTarget.provide("instance", instance);
-      this.portalTarget.mount(el);
+      }).provide("instance", instance).mount(el);
       // this.portalTarget = new Vue({
       //   el,
       //   parent: this,
