@@ -1,72 +1,84 @@
 {
   "name": "vue3-treeselect",
-  "version": "0.1.1",
-  "description": "Tree select hierarchical component for vue 3 (next)",
-  "author": "megafetis",
+  "version": "0.4.1",
+  "description": "Tree select hierarchical component for Vue 3",
+  "main": "dist/vue3-treeselect.cjs.min.js",
+  "unpkg": "dist/vue3-treeselect.umd.min.js",
+  "css": "dist/vue3-treeselect.min.css",
+  "style": "dist/vue3-treeselect.min.css",
   "scripts": {
-    "serve": "vue-cli-service serve ./demo/index.js",
-    "build": "vue-cli-service build --target lib --name vue3-treeselect ./src/index.js && webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-library": "webpack build --config webpack.lib.config.js --mode production",
+    "build-docs": "webpack build --config webpack.docs.config.js --mode production",
+    "docs": "webpack serve --config webpack.docs.config.js --mode development",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore src",
+    "unit": "vitest --dom"
   },
-  "main": "dist/vue3-treeselect.common.js",
-  "unpkg": "dist/vue3-treeselect.umd.js",
-  "files": [
-    "dist/*.js",
-    "dist/*.css",
-    "styles"
-  ],
-  "devDependencies": {
-    "@babel/core": "^7.17.7",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-typescript": "^7.12.7",
-    "@types/ts-nameof": "4.2.1",
-    "@vue/babel-plugin-jsx": "^1.1.1",
-    "@vue/babel-preset-jsx": "1.2.4",
-    "@vue/cli-plugin-babel": "~5.0.4",
-    "@vue/cli-plugin-typescript": "~5.0.4",
-    "@vue/cli-service": "~5.0.4",
-    "@vue/compiler-sfc": "3.2.31",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^6.0.3",
-    "css-loader": "^4.2.0",
-    "dotenv": "^16.0.0",
-    "easings-css": "2.0.3",
-    "file-loader": "^6.0.0",
+  "dependencies": {
+    "@babel/runtime": "^7.23.1",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.4.0",
+    "easings-css": "2.1.1",
     "fuzzysearch": "1.0.3",
-    "html-webpack-plugin": "^5.5.0",
     "is-promise": "4.0.0",
-    "less": "^3.13.0",
-    "less-loader": "^7.1.0",
+    "lodash": "^4.17.21",
     "material-colors": "1.2.6",
-    "mini-css-extract-plugin": "^0.9.0",
-    "postcss": "^8.4.16",
-    "postcss-loader": "^7.0.1",
-    "resolve-url-loader": "^3.1.2",
-    "sass": "^1.26.10",
-    "sass-loader": "^9.0.3",
-    "style-loader": "^1.2.1",
-    "ts-loader": "^9.2.8",
-    "ts-nameof": "5.0.0",
-    "typescript": "~4.6.3",
-    "url-loader": "^4.1.0",
-    "vue": "^3.2.31",
-    "vue-loader": "17.0.0",
-    "vue-style-loader": "4.1.3",
-    "watch-size": "2.0.0",
-    "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4",
-    "webpackbar": "^5.0.2"
+    "watch-size": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-typescript": "^7.23.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/babel-plugin-jsx": "^1.1.1",
+    "@vue/babel-preset-jsx": "1.4.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/compiler-sfc": "3.5.13",
+    "@vue/test-utils": "^2.4.1",
+    "babel-loader": "^9.1.3",
+    "babel-plugin-prismjs": "^2.1.0",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "file-loader": "^6.2.0",
+    "happy-dom": "^15.11.7",
+    "html-webpack-plugin": "^5.5.3",
+    "jasmine-expect": "^5.0.0",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
+    "mini-css-extract-plugin": "^2.7.6",
+    "prettier": "^3.0.3",
+    "prismjs": "^1.29.0",
+    "strip-indent": "^4.0.0",
+    "style-loader": "^4.0.0",
+    "terser-webpack-plugin": "^5.3.9",
+    "vitest": "^2.1.8",
+    "vue": "^3.3.4",
+    "vue-loader": "^17.2.2",
+    "vue-style-loader": "^4.1.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-node-externals": "^3.0.0",
+    "yaku": "^1.0.1"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/soda-nl/vue3-treeselect/issues"
   },
   "browserslist": [
     "Android >= 4.0",
     "iOS >= 8"
   ],
   "homepage": "https://github.com/soda-nl/vue3-treeselect",
+  "files": [
+    "dist/*.js",
+    "dist/*.css",
+    "styles"
+  ],
   "keywords": [
     "vue",
     "vue3",
@@ -79,14 +91,12 @@
     "hierarchy",
     "hierarchical"
   ],
+  "unmockedModulePathPatterns": [
+    "jasmine-expect"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/megafetis/vue3-treeselect.git"
-  },
-  "sideEffects": [
-    "*.css",
-    "*.less"
-  ],
-  "style": "dist/vue3-treeselect.css"
+    "url": "git+https://github.com/soda-nl/vue3-treeselect.git"
+  }
 }
