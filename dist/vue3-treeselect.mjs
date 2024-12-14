@@ -1629,7 +1629,9 @@ const An = {
         return;
       this.single && this.clear();
       const t = this.multiple && !this.flat ? this.forest.checkedStateMap[e.id] === Le : !this.isSelected(e);
-      t ? this._selectNode(e) : this._deselectNode(e), this.buildForestState(), t ? this.$emit("select", e.raw, this.getInstanceId()) : this.$emit("deselect", e.raw, this.getInstanceId()), this.localSearch.active && t && (this.single || this.clearOnSelect) && this.resetSearchQuery(), this.single && this.closeOnSelect && (this.closeMenu(), this.searchable && (this._blurOnSelect = !0));
+      t ? this._selectNode(e) : this._deselectNode(e), this.buildForestState(), this.$nextTick(() => {
+        t ? this.$emit("select", e.raw, this.getInstanceId()) : this.$emit("deselect", e.raw, this.getInstanceId());
+      }), this.localSearch.active && t && (this.single || this.clearOnSelect) && this.resetSearchQuery(), this.single && this.closeOnSelect && (this.closeMenu(), this.searchable && (this._blurOnSelect = !0));
     },
     clear() {
       this.hasValue && (this.single || this.allowClearingDisabled ? this.forest.selectedNodeIds = [] : this.forest.selectedNodeIds = this.forest.selectedNodeIds.filter(

@@ -1829,11 +1829,13 @@ export default {
 
       this.buildForestState()
 
-      if (nextState) {
-        this.$emit('select', node.raw, this.getInstanceId())
-      } else {
-        this.$emit('deselect', node.raw, this.getInstanceId())
-      }
+      this.$nextTick(() => {
+        if (nextState) {
+          this.$emit('select', node.raw, this.getInstanceId())
+        } else {
+          this.$emit('deselect', node.raw, this.getInstanceId())
+        }
+      })
 
       if (this.localSearch.active && nextState && (this.single || this.clearOnSelect)) {
         this.resetSearchQuery()
