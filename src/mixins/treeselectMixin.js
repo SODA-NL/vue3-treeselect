@@ -6,7 +6,7 @@ import {
   isNaN, isPromise, once,
   identity, constant, createMap,
   quickDiff, last as getLast, includes, find, removeFromArray,
-} from '../utils'
+} from '@/utils'
 
 import {
   NO_PARENT_NODE,
@@ -15,7 +15,7 @@ import {
   ALL, BRANCH_PRIORITY, LEAF_PRIORITY, ALL_WITH_INDETERMINATE,
   ALL_CHILDREN, ALL_DESCENDANTS, LEAF_CHILDREN, LEAF_DESCENDANTS,
   ORDER_SELECTED, LEVEL, INDEX,
-} from '../constants'
+} from '@/constants'
 
 function sortValueByIndex(a, b) {
   let i = 0
