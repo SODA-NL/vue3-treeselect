@@ -1517,6 +1517,11 @@ export default {
         this.forest.nodeMap[prev].isHighlighted = false;
       }
 
+      if (node == null) {
+        this.menu.current = null;
+        return;
+      }
+
       this.menu.current = node.id;
       node.isHighlighted = true;
 
