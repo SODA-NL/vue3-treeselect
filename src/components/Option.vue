@@ -1,8 +1,8 @@
-<script>
-  import { UNCHECKED, INDETERMINATE, CHECKED } from '../constants'
-  import { onLeftClick } from '../utils'
-  import Tip from './Tip'
-  import ArrowIcon from './icons/Arrow'
+<script lang="jsx">
+  import { UNCHECKED, INDETERMINATE, CHECKED } from '@/constants'
+  import { onLeftClick } from '@/utils'
+  import Tip from '@/components/Tip.vue'
+  import ArrowIcon from '@/components/icons/Arrow.vue'
 
   let arrowPlaceholder, checkMark, minusMark
 

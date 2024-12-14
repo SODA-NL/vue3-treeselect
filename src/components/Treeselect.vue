@@ -8,11 +8,11 @@
 </template>
 
 <script>
-  import treeselectMixin from '../mixins/treeselectMixin'
-  import HiddenFields from './HiddenFields'
-  import Control from './Control'
-  import Menu from './Menu'
-  import MenuPortal from './MenuPortal'
+  import treeselectMixin from '@/mixins/treeselectMixin.js'
+  import HiddenFields from '@/components/HiddenFields.vue'
+  import Control from '@/components/Control.vue'
+  import Menu from '@/components/Menu.vue'
+  import MenuPortal from '@/components/MenuPortal.vue'
 
   import {defineComponent} from 'vue';
   export default defineComponent({

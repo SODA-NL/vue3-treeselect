@@ -640,6 +640,7 @@ export default {
 
   data() {
     return {
+      key: 0,
       trigger: {
         // Is the control focused?
         isFocused: false,
@@ -1270,6 +1271,7 @@ export default {
 
     handleRemoteSearch() {
       const { searchQuery } = this.trigger
+      const _this66 = this;
       const entry = this.getRemoteSearchEntry()
       const done = () => {
         this.initialize()
@@ -1302,6 +1304,7 @@ export default {
           entry.loadingError = getErrorMessage(err)
         },
         end: () => {
+          _this66.key += 1;
           entry.isLoading = false
         },
       })

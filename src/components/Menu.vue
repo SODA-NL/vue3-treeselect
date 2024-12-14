@@ -1,8 +1,8 @@
-<script>
-  import { MENU_BUFFER } from '../constants'
-  import { watchSize, setupResizeAndScrollEventListeners } from '../utils'
-  import Option from './Option'
-  import Tip from './Tip'
+<script lang="jsx">
+  import { MENU_BUFFER } from '@/constants'
+  import { watchSize, setupResizeAndScrollEventListeners } from '@/utils'
+  import Option from '@/components/Option.vue'
+  import Tip from '@/components/Tip.vue'
 
   const directionMap = {
     top: 'top',
@@ -66,7 +66,7 @@
         if (!instance.menu.isOpen) return null
 
         return (
-          <div ref="menu" class="vue-treeselect__menu" onMousedown={instance.handleMouseDown} style={this.menuStyle}>
+          <div key={instance.key} ref="menu" class="vue-treeselect__menu" onMousedown={instance.handleMouseDown} style={this.menuStyle}>
             {this.renderBeforeList()}
             {instance.async
               ? this.renderAsyncSearchMenuInner()

@@ -1,6 +1,6 @@
-<script>
-  import { isNaN } from '../utils'
-  import {defineComponent} from 'vue';
+<script lang="jsx">
+  import { isNaN } from '@/utils'
+  import { defineComponent } from 'vue';
 
   function stringifyValue(value) {
     if (typeof value === 'string') return value
@@ -18,7 +18,7 @@
     render(context) {
       const instance = context.instance
 
-      if (!instance.name || instance.disabled || !instance.hasValue) return null
+      if (!instance || !instance.name || instance.disabled || !instance.hasValue) return null
 
       let stringifiedValues = instance.internalValue.map(stringifyValue)
 
