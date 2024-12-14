@@ -1434,7 +1434,11 @@ const An = {
     },
     setCurrentHighlightedOption(e, t = !0) {
       const n = this.menu.current;
-      if (n != null && n in this.forest.nodeMap && (this.forest.nodeMap[n].isHighlighted = !1), this.menu.current = e.id, e.isHighlighted = !0, this.menu.isOpen && t) {
+      if (n != null && n in this.forest.nodeMap && (this.forest.nodeMap[n].isHighlighted = !1), !e) {
+        this.menu.current = null;
+        return;
+      }
+      if (this.menu.current = e.id, e.isHighlighted = !0, this.menu.isOpen && t) {
         const s = () => {
           const i = this.getMenu(), o = i.querySelector(`.vue-treeselect__option[data-id="${e.id}"]`);
           o && Qt(i, o);
