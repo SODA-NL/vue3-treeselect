@@ -1,0 +1,84 @@
+{
+  "name": "@soda-nl/vue3-treeselect",
+  "version": "0.2.5",
+  "description": "Tree select hierarchical component for vue 3 (next)",
+  "main": "dist/vue3-treeselect.mjs",
+  "unpkg": "dist/vue3-treeselect.umd.js",
+  "author": "megafetis",
+  "scripts": {
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "vite": "^6.0.3"
+  },
+  "devDependencies": {
+    "@types/ts-nameof": "4.2.5",
+    "@vue/compiler-sfc": "3.5.13",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "dotenv": "^16.4.7",
+    "easings-css": "2.1.1",
+    "file-loader": "^6.2.0",
+    "fuzzysearch": "1.0.3",
+    "html-webpack-plugin": "^5.6.3",
+    "is-promise": "4.0.0",
+    "less": "^4.2.1",
+    "less-loader": "^12.2.0",
+    "material-colors": "1.2.6",
+    "mini-css-extract-plugin": "^2.9.2",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.83.0",
+    "sass-loader": "^16.0.4",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "ts-nameof": "5.0.0",
+    "typescript": "^5.7.2",
+    "url-loader": "^4.1.1",
+    "vue": "^3.5.13",
+    "vue-loader": "17.4.2",
+    "vue-style-loader": "4.1.3",
+    "watch-size": "2.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.21"
+  },
+  "browserslist": [
+    "Android >= 6.0",
+    "iOS >= 9",
+    "not dead"
+  ],
+  "homepage": "https://github.com/soda-nl/vue3-treeselect",
+  "files": [
+    "dist/*.js",
+    "dist/*.css",
+    "styles"
+  ],
+  "keywords": [
+    "vue",
+    "vue3",
+    "next",
+    "vue next",
+    "tree",
+    "treeselect",
+    "select",
+    "tree select",
+    "hierarchy",
+    "hierarchical"
+  ],
+  "style": "dist/style.css",
+  "sideEffects": [
+    "*.css",
+    "*.less"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r2rka1/vue3-treeselect"
+  }
+}
