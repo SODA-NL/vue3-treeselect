@@ -1331,7 +1331,8 @@ const An = {
       e ? document.addEventListener("mousedown", this.handleClickOutside, !1) : document.removeEventListener("mousedown", this.handleClickOutside, !1);
     },
     getValueContainer() {
-      return this.$refs.control.$refs["value-container"];
+      var e, t;
+      return (t = (e = this.$refs) == null ? void 0 : e.control) == null ? void 0 : t.$refs["value-container"];
     },
     getInput() {
       return this.getValueContainer().$refs.input;
@@ -1425,11 +1426,12 @@ const An = {
       return !(this.localSearch.active && !this.shouldOptionBeIncludedInSearchResult(e));
     },
     getControl() {
-      return this.$refs.control.$el;
+      var e;
+      return (e = this.$refs.control) == null ? void 0 : e.$el;
     },
     getMenu() {
-      var n;
-      const e = this.appendToBody && this.$refs.portal ? this.$refs.portal.portalTarget : this, t = (n = e == null ? void 0 : e.$refs) == null ? void 0 : n.menu.$refs.menu;
+      var n, s;
+      const e = this.appendToBody && ((n = this.$refs) != null && n.portal) ? this.$refs.portal.portalTarget : this, t = (s = e == null ? void 0 : e.$refs) == null ? void 0 : s.menu.$refs.menu;
       return t && t.nodeName !== "#comment" ? t : null;
     },
     setCurrentHighlightedOption(e, t = !0) {
