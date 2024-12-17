@@ -1842,7 +1842,7 @@ const Vn = /* @__PURE__ */ Te({
           }
           case g.ARROW_LEFT: {
             const s = t.getNode(t.menu.current);
-            s.isBranch && t.shouldExpand(s) ? (e.preventDefault(), t.toggleExpanded(s)) : !s.isRootNode && (s.isLeaf || s.isBranch && !t.shouldExpand(s)) && (e.preventDefault(), t.setCurrentHighlightedOption(s.parentNode));
+            s && (s.isBranch && t.shouldExpand(s) ? (e.preventDefault(), t.toggleExpanded(s)) : !s.isRootNode && (s.isLeaf || s.isBranch && !t.shouldExpand(s)) && (e.preventDefault(), t.setCurrentHighlightedOption(s.parentNode)));
             break;
           }
           case g.ARROW_UP: {
@@ -1851,7 +1851,7 @@ const Vn = /* @__PURE__ */ Te({
           }
           case g.ARROW_RIGHT: {
             const s = t.getNode(t.menu.current);
-            s.isBranch && !t.shouldExpand(s) && (e.preventDefault(), t.toggleExpanded(s));
+            s && s.isBranch && !t.shouldExpand(s) && (e.preventDefault(), t.toggleExpanded(s));
             break;
           }
           case g.ARROW_DOWN: {
