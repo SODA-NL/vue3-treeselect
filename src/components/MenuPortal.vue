@@ -98,18 +98,25 @@
       updateMenuContainerOffset() {
         const { instance } = this
         const $control = instance.getControl()
+
+        if (!$control) {
+          return
+        }
+
         const $portalTarget = this.$el
         const controlRect = $control.getBoundingClientRect()
         const portalTargetRect = $portalTarget.getBoundingClientRect()
         const offsetY = instance.menu.placement === 'bottom' ? controlRect.height : 0
         const left = Math.round(controlRect.left - portalTargetRect.left) + 'px'
         const top = Math.round(controlRect.top - portalTargetRect.top + offsetY) + 'px'
-        const menuContainerStyle = this.$refs.menu.$refs['menu-container'].style
+        const menuContainerStyle = this.$refs?.menu?.$refs['menu-container'].style
         const transformVariations = [ 'transform', 'webkitTransform', 'MozTransform', 'msTransform' ]
         const transform = find(transformVariations, t => t in document.body.style)
 
         // IE9 doesn't support `translate3d()`.
-        menuContainerStyle[transform] = `translate(${left}, ${top})`
+        if (menuContainerStyle) {
+          menuContainerStyle[transform] = `translate(${left}, ${top})`
+        }
       },
     },
 
