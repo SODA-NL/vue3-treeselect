@@ -2619,8 +2619,12 @@ const Xn = {
       const {
         instance: e
       } = this;
-      if (!e.menu.isOpen) return;
-      const t = e.getMenu(), n = e.getControl(), s = t.getBoundingClientRect(), i = n.getBoundingClientRect(), r = s.height, a = window.innerHeight, u = i.top, h = window.innerHeight - i.bottom, l = i.top >= 0 && i.top <= a || i.top < 0 && i.bottom > 0, f = h > r + ut, d = u > r + ut;
+      if (!e.menu.isOpen)
+        return;
+      const t = e.getMenu(), n = e.getControl();
+      if (!t || !n)
+        return;
+      const s = t.getBoundingClientRect(), i = n.getBoundingClientRect(), r = s.height, a = window.innerHeight, u = i.top, h = window.innerHeight - i.bottom, l = i.top >= 0 && i.top <= a || i.top < 0 && i.bottom > 0, f = h > r + ut, d = u > r + ut;
       l ? e.openDirection !== "auto" ? e.menu.placement = Xn[e.openDirection] : f || !d ? e.menu.placement = "bottom" : e.menu.placement = "top" : e.closeMenu();
     },
     setupMenuSizeWatcher() {
